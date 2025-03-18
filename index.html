@@ -130,7 +130,7 @@
             spreadsheetData.forEach((row, index) => {
                 const option = document.createElement('option');
                 option.value = index;
-                option.textContent = row['Email Address'];
+                option.textContent = `${row['Desain yang dipilih']} - ${row['Email Address']}`;
                 emailSelector.appendChild(option);
             });
         }
