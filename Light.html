@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan {{Nama Panggilan Pengantin Pria}} & {{Nama Panggilan Pengantin Wanita}}</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #fff;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #d4a373;
+            font-family: 'Playfair Display', serif;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #d4a373;
+            font-family: 'Playfair Display', serif;
+        }
+        .couple-names {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #333;
+        }
+        .date-venue {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #d4a373;
+        }
+        .couple-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .person {
+            text-align: center;
+            width: 45%;
+            padding: 20px;
+        }
+        .person h3 {
+            font-size: 1.8em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .person p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+        .event {
+            margin: 20px 0;
+        }
+        .event h3 {
+            color: #d4a373;
+            margin-bottom: 10px;
+        }
+        .event p {
+            margin: 5px 0;
+        }
+        .story {
+            font-style: italic;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .gift {
+            text-align: center;
+        }
+        .gift p {
+            margin: 5px 0;
+        }
+        .social-media {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .person {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Undangan Pernikahan</h1>
+            <div class="couple-names">{{Nama Panggilan Pengantin Pria}} & {{Nama Panggilan Pengantin Wanita}}</div>
+            <p>Kami mengundang Anda untuk berbagi kebahagiaan di hari pernikahan kami</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="date-venue">
+            <h2 class="section-title">Save the Date</h2>
+            <p style="text-align: center; font-size: 1.5em;">{{Hari dilaksanakan Akad}}, {{Tanggal dilaksanakan Akad}}</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Mempelai</h2>
+            <div class="couple-info">
+                <div class="person">
+                    <h3>{{Nama Pengantin Pria}}</h3>
+                    <p>Putra dari</p>
+                    <p>Bapak {{Nama Ayah dari Pengantin Pria}}</p>
+                    <p>& Ibu {{Nama Ibu dari Pengantin Pria}}</p>
+                </div>
+                <div class="person">
+                    <h3>{{Nama Pengantin Wanita}}</h3>
+                    <p>Putri dari</p>
+                    <p>Bapak {{Nama Ayah dari Pengantin Wanita}}</p>
+                    <p>& Ibu {{Nama Ibu dari Pengantin Wanita}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Acara</h2>
+            <div class="event">
+                <h3>Akad Nikah</h3>
+                <p><strong>Tanggal:</strong> {{Tanggal dilaksanakan Akad}}</p>
+                <p><strong>Hari:</strong> {{Hari dilaksanakan Akad}}</p>
+                <p><strong>Pukul:</strong> {{Jam dilaksanakan Akad}} WIB</p>
+                <p><strong>Tempat:</strong> {{Tempat dilaksanakan Akad}}</p>
+                <p><strong>Lokasi:</strong> {{Kordinat tempat Akad}}</p>
+            </div>
+            <div class="event">
+                <h3>Resepsi</h3>
+                <p><strong>Tanggal:</strong> {{Tanggal dilaksanakan Resepsi}}</p>
+                <p><strong>Hari:</strong> {{Hari dilaksanakan Resepsi}}</p>
+                <p><strong>Pukul:</strong> {{Jam dilaksanakan Resepsi}} WIB</p>
+                <p><strong>Tempat:</strong> {{Tempat dilaksanakan Resepsi}}</p>
+                <p><strong>Lokasi:</strong> {{Kordinat tempat Resepsi}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Kisah Cinta Kami</h2>
+            <div class="story">
+                <h3>Pertemuan Pertama</h3>
+                <p><strong>Tanggal:</strong> {{Hari Perkenalan Pertama dengan pasangan}}</p>
+                <p>{{Cerita Singkat saat Perkenalan Pertama}}</p>
+            </div>
+            <div class="story">
+                <h3>Awal Hubungan</h3>
+                <p><strong>Tanggal:</strong> {{Hari Mulai Menjalin Hubungan dengan pasangan}}</p>
+                <p>{{Cerita Singkat saat Mulai Menjalin Hubungan}}</p>
+            </div>
+            <div class="story">
+                <h3>Keputusan Menikah</h3>
+                <p>{{Cerita Singkat saat memutuskan Menikah}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Hadiah Pernikahan</h2>
+            <div class="gift">
+                <p>Doa dan kehadiran Anda adalah hadiah terbaik bagi kami.</p>
+                <p>Namun, jika Anda ingin memberikan hadiah, Anda dapat mengirimkannya melalui:</p>
+                <p><strong>{{Nama Bank/E-Wallet untuk Hadiah}}</strong></p>
+                <p><strong>{{Nomor Rekening Bank/E-Wallet untuk Hadiah}}</strong></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Media Sosial</h2>
+            <div class="social-media">
+                <p>Bagikan momen bahagia bersama kami di:</p>
+                <p>{{Akun Sosial Media}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Terima kasih atas doa dan kehadiran Anda</p>
+        <p>{{Nama Panggilan Pengantin Pria}} & {{Nama Panggilan Pengantin Wanita}}</p>
+        <p>{{Timestamp}}</p>
+    </div>
+</body>
+</html>
+
