@@ -111,21 +111,33 @@
             try {
                 // Replace with your Google Apps Script web app URL
                 const scriptUrl = 'https://script.google.com/macros/s/AKfycbxhjGbONJxLpK_yqMasqaKXYbgVk0jxKTAiY1-TWdGKGQtzmXL9ncbEhxcNEIf6SK8QSg/exec';
-        
-                // Create a script element to load the JSONP
-                const script = document.createElement('script');
-                script.src = scriptUrl + '?callback=handleResponse';
-                document.body.appendChild(script);
-        
-                // Define the callback function
-                window.handleResponse = function(data) {
-                    spreadsheetData = data;
-                    populateEmailSelector();
-            
-                    // Clean up
-                    document.body.removeChild(script);
-                    delete window.handleResponse;
-                };
+                
+                return new Promise((resolve, reject) => {
+                    // Create an iframe to load the script
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    document.body.appendChild(iframe);
+                    
+                    // Listen for the message from the iframe
+                    window.addEventListener('message', function messageHandler(event) {
+                        try {
+                            const data = JSON.parse(event.data);
+                            spreadsheetData = data;
+                            populateEmailSelector();
+                            
+                            // Clean up
+                            window.removeEventListener('message', messageHandler);
+                            document.body.removeChild(iframe);
+                            
+                            resolve();
+                        } catch (error) {
+                            reject(error);
+                        }
+                    }, false);
+                    
+                    // Load the script in the iframe
+                    iframe.src = scriptUrl;
+                });
             } catch (error) {
                 console.error('Error fetching data:', error);
                 alert('Terjadi kesalahan saat mengambil data. Silakan coba lagi.');
